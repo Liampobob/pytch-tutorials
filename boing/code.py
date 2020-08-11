@@ -81,6 +81,7 @@ class Ball(pytch.Sprite):
                 position_on_bat = self.get_y() - player_y
                 if (position_on_bat >= -45) and (position_on_bat <= 45):
                     self.y_speed = int(position_on_bat / 10)
+                    pytch.broadcast("player-hit")
                     self.change_x(-self.x_speed)
                     self.x_speed = -self.x_speed
                     self.start_sound('hit')
